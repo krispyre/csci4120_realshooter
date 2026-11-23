@@ -4,7 +4,10 @@ const MOB_SCENE = preload("res://scenes/mob.tscn")
 @onready var mob_container = $MobContainer
 @onready var player = $player
 @onready var markers = [$spawn1, $spawn2, $spawn3, $spawn4, $spawn1]
+
 var score = 0
+@onready var score_label: Label = $HUD/MarginContainer/ScoreLabel
+@onready var msg: Label = $HUD/msg
 
 func _on_mob_spawn_timer_timeout() -> void:
 	var new_mob = MOB_SCENE.instantiate()
@@ -23,3 +26,4 @@ func _physics_process(delta: float) -> void:
 func on_mob_killed() -> void:
 	score += 1
 	print("Score: " + str(score))
+	score_label.text = "Score: " + str(score)

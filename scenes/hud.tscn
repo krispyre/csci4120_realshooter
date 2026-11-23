@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cuupwvuo2pgd8"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1607678603]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1791165706]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=732813969]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+
+[node name="msg" type="Label" parent="." unique_id=2116360982]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = -33.5
+offset_right = 107.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 48
+text = "You died!"
+
+[node name="crosshair" type="Label" parent="." unique_id=1609136244]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1

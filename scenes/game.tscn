@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://br36ibtwnelyc" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://uvx53q0xu2p2" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cuupwvuo2pgd8" path="res://scenes/hud.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node3D" unique_id=776119363]
 script = ExtResource("1_yqjtg")
@@ -127,4 +128,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.610208, 0, -15.35339)
 wait_time = 2.0
 autostart = true
 
+[node name="HUD" parent="." unique_id=1607678603 instance=ExtResource("3_lnu2h")]
+
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
+
+[editable path="HUD"]
