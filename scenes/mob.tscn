@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bnxcx5mr0ejnw"]
+
+[ext_resource type="PackedScene" uid="uid://dia7u1l08xctb" path="res://assets/Models/characters/character-r.glb" id="1_4are2"]
+[ext_resource type="Script" uid="uid://ccedd8kwe204q" path="res://scenes/mob.gd" id="1_bsing"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ka23v"]
+radius = 0.828125
+height = 2.9492188
+
+[node name="mob" type="RigidBody3D" unique_id=2081640248]
+lock_rotation = true
+script = ExtResource("1_bsing")
+
+[node name="model" parent="." unique_id=594497380 instance=ExtResource("1_4are2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=406058477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.445298, 0)
+shape = SubResource("CapsuleShape3D_ka23v")
+
+[editable path="model"]

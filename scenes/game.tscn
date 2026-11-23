@@ -1,106 +1,130 @@
 [gd_scene format=3 uid="uid://byh6urp3hkgrd"]
 
 [ext_resource type="PackedScene" uid="uid://br36ibtwnelyc" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://uvx53q0xu2p2" path="res://scripts/game.gd" id="1_yqjtg"]
 
 [node name="Game" type="Node3D" unique_id=776119363]
+script = ExtResource("1_yqjtg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=812137144]
 transform = Transform3D(0.70090926, -0.571122, 0.42725387, 0, 0.59902364, 0.80073136, -0.71325046, -0.56124, 0.41986123, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1874916368]
+[node name="level" type="Node3D" parent="." unique_id=448750818]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="level" unique_id=1874916368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4000003, -0.099999964, -6.0499983)
 use_collision = true
 size = Vector3(22.300001, 0.2, 23.300001)
 
-[node name="tunnel" type="CSGCylinder3D" parent="." unique_id=142773250]
+[node name="tunnel" type="CSGCylinder3D" parent="level" unique_id=142773250]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, -1.0000001, 0, 1.0000001, -4.3711392e-08, -0.1, 1.6000005, -12.313002)
 use_collision = true
 radius = 1.7
 height = 15.773001
 
-[node name="hole" type="CSGCylinder3D" parent="tunnel" unique_id=1289671888]
+[node name="hole" type="CSGCylinder3D" parent="level/tunnel" unique_id=1289671888]
 transform = Transform3D(1, 0, 0, 0, 1, -8.1712415e-14, 0, 8.1712415e-14, 1, 0, 0, 0)
 operation = 2
 use_collision = true
 radius = 1.1
 height = 15.773001
 
-[node name="tunnel2" type="CSGCylinder3D" parent="." unique_id=769118571]
+[node name="tunnel2" type="CSGCylinder3D" parent="level" unique_id=769118571]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, -1.0000001, 0, 1.0000001, -4.3711392e-08, -3.5, 1.6000005, -12.313002)
 use_collision = true
 radius = 1.7
 height = 15.773001
 
-[node name="hole" type="CSGCylinder3D" parent="tunnel2" unique_id=297632176]
+[node name="hole" type="CSGCylinder3D" parent="level/tunnel2" unique_id=297632176]
 transform = Transform3D(1, 0, 0, 0, 1, -8.1712415e-14, 0, 8.1712415e-14, 1, 0, 0, 0)
 operation = 2
 use_collision = true
 radius = 1.1
 height = 15.773001
 
-[node name="tunnel4" type="CSGCylinder3D" parent="." unique_id=408264630]
+[node name="tunnel4" type="CSGCylinder3D" parent="level" unique_id=408264630]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, -1.0000001, 0, 1.0000001, -4.3711392e-08, -1.9, 4.3000007, -12.313002)
 use_collision = true
 radius = 1.7
 height = 15.773001
 
-[node name="hole" type="CSGCylinder3D" parent="tunnel4" unique_id=1661525495]
+[node name="hole" type="CSGCylinder3D" parent="level/tunnel4" unique_id=1661525495]
 transform = Transform3D(1, 0, 0, 0, 1, -8.1712415e-14, 0, 8.1712415e-14, 1, 0, 0, 0)
 operation = 2
 radius = 1.1
 height = 15.773001
 
-[node name="tunnel5" type="CSGCylinder3D" parent="." unique_id=949414545]
+[node name="tunnel5" type="CSGCylinder3D" parent="level" unique_id=949414545]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, -1.0000001, 0, 1.0000001, -4.3711392e-08, 1.8000001, 4.3000007, -12.313002)
 use_collision = true
 radius = 1.7
 height = 15.773001
 
-[node name="hole" type="CSGCylinder3D" parent="tunnel5" unique_id=632350946]
+[node name="hole" type="CSGCylinder3D" parent="level/tunnel5" unique_id=632350946]
 transform = Transform3D(1, 0, 0, 0, 1, -8.1712415e-14, 0, 8.1712415e-14, 1, 0, 0, 0)
 operation = 2
 use_collision = true
 radius = 1.1
 height = 15.773001
 
-[node name="tunnel3" type="CSGCylinder3D" parent="." unique_id=598413852]
+[node name="tunnel3" type="CSGCylinder3D" parent="level" unique_id=598413852]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, -1.0000001, 0, 1.0000001, -4.3711392e-08, 3.3000002, 1.6000005, -12.313002)
 use_collision = true
 radius = 1.7
 height = 15.773001
 
-[node name="hole" type="CSGCylinder3D" parent="tunnel3" unique_id=1728097975]
+[node name="hole" type="CSGCylinder3D" parent="level/tunnel3" unique_id=1728097975]
 transform = Transform3D(1, 0, 0, 0, 1, -8.1712415e-14, 0, 8.1712415e-14, 1, 0, 0, 0)
 operation = 2
 use_collision = true
 radius = 1.1
 height = 15.773001
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=96014983]
+[node name="CSGBox3D2" type="CSGBox3D" parent="level" unique_id=96014983]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8500001, 1.4000001, 1.1)
 use_collision = true
 size = Vector3(2.5, 2.6000001, 3.2)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=422758929]
+[node name="CSGBox3D3" type="CSGBox3D" parent="level" unique_id=422758929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7499999, 1.4000001, 4.55)
 use_collision = true
 size = Vector3(2.5, 2.6000001, 2.1000001)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1623210600]
+[node name="CSGBox3D4" type="CSGBox3D" parent="level" unique_id=1623210600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0499997, 0.5500001, -0.5499997)
 use_collision = true
 size = Vector3(2.5, 0.90000004, 2.1000001)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1238412784]
+[node name="CSGBox3D5" type="CSGBox3D" parent="level" unique_id=1238412784]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1293015, 1.633355, 2.0604444)
 use_collision = true
 size = Vector3(2.5, 0.90000004, 2.1000001)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=505082852]
+[node name="CSGBox3D6" type="CSGBox3D" parent="level" unique_id=505082852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1293015, 2.3106465, 4.002568)
 use_collision = true
 size = Vector3(2.5, 0.90000004, 2.1000001)
 
 [node name="player" parent="." unique_id=594174146 instance=ExtResource("1_uwrxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+
+[node name="spawn1" type="Marker3D" parent="." unique_id=429373864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09709, 0, -14.841904)
+
+[node name="spawn2" type="Marker3D" parent="." unique_id=793845101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.908024, 0, 4.77548)
+
+[node name="spawn3" type="Marker3D" parent="." unique_id=1672881903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.087908, 0, 4.940483)
+
+[node name="spawn4" type="Marker3D" parent="." unique_id=319378746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.610208, 0, -15.35339)
+
+[node name="MobContainer" type="Node" parent="." unique_id=82155789]
+
+[node name="MobSpawnTimer" type="Timer" parent="." unique_id=1890640426]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
