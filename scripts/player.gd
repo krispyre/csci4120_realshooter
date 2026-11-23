@@ -3,9 +3,14 @@ extends CharacterBody3D
 const MOVEMENT_SPEED = 5
 const JUMP_SPEED = 8
 const GRAVITY = 10
+const BULLET_INTERVAL = .2
+const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 
 @onready var camera = $Camera3D
 @onready var anim_player: AnimationPlayer = $"model/AnimationPlayer"
+@onready var bullet_marker: Marker3D = $bulletMarker
+
+var last_bullet_time = 0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # hide the cursor
@@ -34,6 +39,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_SPEED
 	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
 		velocity.y = 0.0
+	
+	if Input.is_action_pressed("shoot"):
+		shoot()
 		
 	if velocity.length() > 0:
 		anim_player.play("walk")
@@ -41,3 +49,12 @@ func _physics_process(delta: float) -> void:
 		anim_player.play("idle")
 		
 	move_and_slide()
+	
+func shoot():
+	var now = Time.get_unix_time_from_system()
+	if now - last_bullet_time > BULLET_INTERVAL:
+		var b = BULLET_SCENE.instantiate()
+		bullet_marker.add_child(b)
+		b.global_transform = bullet_marker.global_transform
+		b.global_rotation = camera.global_rotation # point at camera bruh
+		last_bullet_time = now

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://br36ibtwnelyc"]
 
 [ext_resource type="PackedScene" uid="uid://bt5doc0r07r00" path="res://assets/Models/guns/blaster-c.glb" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://ynolyk4doec5" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://ynolyk4doec5" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bifrobq7blp2s" path="res://assets/Models/characters/Textures/texture-g.png" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1qa5v"]
@@ -1908,3 +1908,7 @@ mesh = SubResource("ArrayMesh_tij4f")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="model" unique_id=1588096322]
 libraries/ = SubResource("AnimationLibrary_pgroy")
 autoplay = &"idle"
+
+[node name="bulletMarker" type="Marker3D" parent="." unique_id=2058502403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3012791, 1.0199814, -0.6429748)
+gizmo_extents = 1.34
